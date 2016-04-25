@@ -18,7 +18,7 @@ npm install --save purebem-js
 
 ### Import module
 
-```
+```js
 import purebem from 'purebem-js';
 
 const element = purebem('my-block');
