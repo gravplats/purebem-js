@@ -1,0 +1,40 @@
+{
+  "name": "purebem-js",
+  "version": "0.0.0",
+  "description": "A BEM CSS methodology utility helper",
+  "license": "MIT",
+  "repository": "mrydengren/purebem-js",
+  "keywords": [
+    "BEM"
+  ],
+  "main": "lib/index",
+  "jsnext:main": "modules/index",
+  "files": [
+    "lib",
+    "modules"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.7.7",
+    "babel-eslint": "^6.0.3",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-stage-2": "^6.5.0",
+    "babel-tape-runner": "^2.0.1",
+    "eslint": "^2.8.0",
+    "eslint-config-coderesque": "^1.0.0",
+    "tap-dot": "^1.0.5",
+    "tap-pessimist": "^1.0.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.5.1"
+  },
+  "scripts": {
+    "eslint": "./scripts/run-eslint.sh",
+    "tape": "./scripts/run-tape.sh",
+    "build": "./scripts/run-build.sh",
+    "pretest": "./scripts/run-eslint.sh",
+    "test": "./scripts/run-tape.sh",
+    "posttest": "./scripts/run-build.sh",
+    "preversion": "npm tst",
+    "prepublish": "./scripts/run-build.sh"
+  }
+}
