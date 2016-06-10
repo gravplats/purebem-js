@@ -5,7 +5,7 @@ import isString from './isString';
 
 
 export default (elementSeparator = '__', modifierSeparator = '--') => {
-    return (block) => (...params) => {
+    const purebem = (block) => (...params) => {
         if (!isNumber(block) && !isString(block)) {
             return '';
         }
@@ -16,5 +16,14 @@ export default (elementSeparator = '__', modifierSeparator = '--') => {
         const additional = modifiers.map((modifier) => `${base}${modifierSeparator}${modifier}`);
 
         return [base, ...additional].join(' ');
+    };
+
+    return (...params) => {
+        if (params.length === 0) {
+            return '';
+        }
+
+        const block = purebem(params[0]);
+        return params.length === 1 ? block : block(...params.slice(1));
     };
 };

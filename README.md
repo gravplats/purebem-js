@@ -21,30 +21,34 @@ npm install --save purebem-js
 ```js
 import purebem from 'purebem-js';
 
-const element = purebem('my-block');
+const result = purebem('my-block', 'my-element', ['modifier']);
+// 'my-block__my-element my-block__my-element--modifier'
+
+
+const block = purebem('my-block');
 
 // Define a block.
-element();
+block();
 // 'my-block'
 
 // Define a block with modifier(s) using an object.
-element({ modifier: true });
+block({ modifier: true });
 // 'my-block my-block--modifier'
 
 // Define a block with modifier(s) using an array.
-element(['modifier'];
+block(['modifier'];
 // 'my-block my-block--modifier'
 
 // Define an element.
-element('my-element');
+block('my-element');
 // 'my-block__my-element'
 
 // Define an element with modifiers using an object.
-element('my-element', { modifier: true });
+block('my-element', { modifier: true });
 // 'my-block__my-element my-block__my-element--modifier'
 
 // Define an element with modifiers using an array.
-element('my-element', ['modifier'];
+block('my-element', ['modifier'];
 // 'my-block__my-element my-block__my-element--modifier'
 ```
 

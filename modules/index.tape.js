@@ -3,6 +3,28 @@ import test from 'tape';
 import purebem from './index';
 
 
+test('purebem with no arguments', (t) => {
+    const result = purebem();
+
+    t.is(result, '');
+    t.end();
+});
+
+test('purebem with element', (t) => {
+    const result = purebem('block', 'element');
+
+    t.is(result, 'block__element');
+    t.end();
+});
+
+test('purebem with element/modifiers', (t) => {
+    const result = purebem('block', 'element', ['modifier']);
+
+    t.is(result, 'block__element block__element--modifier');
+    t.end();
+});
+
+
 const block = purebem('block');
 
 test('block', (t) => {
