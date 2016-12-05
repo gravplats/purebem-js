@@ -31,6 +31,9 @@ element();
 element({ modifier: true });
 // 'my-block my-block--modifier'
 
+element({ camelCase: true });
+// 'my-block my-block--camel-case'
+
 // Define a block with modifier(s) using an array.
 element(['modifier'];
 // 'my-block my-block--modifier'
