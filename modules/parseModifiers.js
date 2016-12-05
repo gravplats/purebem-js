@@ -3,8 +3,12 @@ import isObject from './isObject';
 import isString from './isString';
 
 
+const convertCamelCase = (key) => {
+    return key.replace(/([a-z](?=[A-Z]))/g, '$1-').toLowerCase();
+};
+
 const fromKeyOrValue = (key, value) => {
-    return isNumber(value) || isString(value) ? value.toString() : key.toString();
+    return isNumber(value) || isString(value) ? value.toString() : convertCamelCase(key.toString());
 };
 
 const isValidArrayItem = (value) => {

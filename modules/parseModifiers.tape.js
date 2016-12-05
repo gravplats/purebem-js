@@ -18,6 +18,14 @@ test('object with boolean', (t) => {
     t.end();
 });
 
+test('object with boolean (camelCase)', (t) => {
+    const valueCamelCase = true;
+    const modifiers = parseModifiers([{ valueCamelCase }]);
+
+    t.same(modifiers, ['value-camel-case']);
+    t.end();
+});
+
 test('object with string', (t) => {
     const value = 'other';
     const modifiers = parseModifiers([{ value }]);
