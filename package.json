@@ -24,15 +24,15 @@
     "tape": "^4.5.1"
   },
   "scripts": {
-    "eslint": "./scripts/run-eslint.sh",
-    "tape": "./scripts/run-tape.sh",
-    "build": "yarn run build:commonjs",
+    "build": "yarn run build:commonjs && yarn run build:es",
     "build:commonjs": "./scripts/run-build-commonjs.sh",
     "build:es": "./scripts/run-build-es.sh",
+    "eslint": "./scripts/run-eslint.sh",
+    "tape": "./scripts/run-tape.sh",
     "pretest": "yarn run eslint",
     "test": "yarn run tape",
     "posttest": "yarn run build",
-    "preversion": "yarn run test",
+    "preversion": "yarn test",
     "prepublish": "yarn run build"
   }
 }
